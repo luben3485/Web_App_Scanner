@@ -1,0 +1,207 @@
+@import 'https://fonts.googleapis.com/css?family=Fjalla+One|Playfair+Display';
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+* {
+  /*transition: all 0.5s ease;*/
+  box-sizing: border-box;
+}
+body {
+    /*font-family: 'Playfair Display', serif;*/
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0em;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    /*letter-spacing: 2px;*/
+
+    
+}
+
+.ui.toggle.checkbox{
+    margin: 1.6rem 1.5rem;
+}
+
+.ui.toggle.checkbox input:checked ~ .box:before,
+.ui.toggle.checkbox input:checked ~ .coloring.red:before {
+background: #F25F5C !important;
+}
+
+.ui.modal > .modalheader{
+  background-color: #ffffff !important;
+  font-size:2rem;
+  padding:1rem;
+}
+
+#img{
+    position:absolute;
+    top:0.7rem;
+    left:7rem;
+}
+#list{
+    position:absolute;
+    top:0.7rem;
+}
+.ui.large.invesrted.secondary.menu{
+    
+}
+#bar{
+    box-shadow:3px 3px 12px gray;
+}
+#bar ,#sidebarhead{
+    /*height:5.5rem;*/
+    height:60px;
+    
+}
+.ui.inverted.segment{
+    margin:0px;
+    border-radius:0px;
+}
+#schedule{
+    margin-bottom:2rem;
+}
+.ui.positive.message{
+    display:block;
+}
+#message,#checkScanMsg,#scanningmessage{
+    display:none;
+}
+#header{
+    font-size: 4rem;
+    font-family:Arial;
+    margin-top:4rem;
+}
+#app{
+    margin-top:1.5rem;
+    margin-bottom:15rem;
+}
+#msg,#scanningMsg,#checkScanTitle{
+    font-size:1.4rem;
+    
+}
+#submsg,#scanningSubmsg,#checkScanSubtitle{
+    font-size:1.1rem;
+}
+.mainbtn{
+    margin-bottom:2rem;
+}
+#app td span span{
+    text-align: center;
+    margin-top:0.45rem;
+    margin-bottom:0.45rem;
+}
+#scanblock{
+    min-height:40%;
+}
+.ui.inverted.vertical.footer.segment{
+    position: relative;
+    
+}
+#main{
+    
+}
+
+@media (min-width: 1500px) {
+    /*#dashboard{
+        font-size:1.4rem;
+
+    }
+    
+    #downloadReport{ 
+        font-size:1.4rem;
+
+    }*/
+    #startScan{ 
+        font-size:1.4rem;
+    }      
+    
+    #cancelButton{ 
+        font-size:1.4rem;
+    }   
+    #title-a,#url-a{
+        display:block;
+    }
+    #title-b,#url-b{
+        display:none;
+    }
+    #startScan{ 
+        font-size:1.4rem;
+    }      
+    
+    #cancelButton{ 
+        font-size:1.4rem;
+    }   
+}
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+    /*
+    #dashboard{
+        font-size:1.4rem;
+
+    }
+    
+    #downloadReport{ 
+        font-size:1.4rem;
+
+    }*/
+    #startScan{ 
+        font-size:1.4rem;
+    }   
+    #cancelButton{ 
+        font-size:1.4rem;
+    } 
+    #title-a,#url-a{
+        display:none;
+    }
+    #title-b,#url-b{
+        display:block;
+    }
+    #startScan{ 
+        font-size:1.4rem;
+    }   
+    #cancelButton{ 
+        font-size:1.4rem;
+    } 
+   
+}
+
+@media (max-width: 1000px) {
+    /*
+    #dashboard{
+        font-size:1.3rem;
+        width:100%;
+        margin-bottom:0.5rem;
+    }
+    #downloadReport{ 
+        font-size:1.3rem;
+        width:100%;
+        margin-bottom:0.5rem;
+    }*/
+     #title-a,#url-a{
+        display:none;
+    }
+    #title-b,#url-b{
+        display:block;
+    }
+    #startScan{ 
+        font-size:1.3rem;
+        width:100%;
+        margin-bottom:0.5rem;
+    }
+    #cancelButton{ 
+        font-size:1.3rem;
+        width:100%;
+        margin-bottom:0.5rem;
+    } 
+    #startScan{ 
+        font-size:1.3rem;
+        width:100%;
+        margin-bottom:0.5rem;
+    }
+    #cancelButton{ 
+        font-size:1.3rem;
+        width:100%;
+        margin-bottom:0.5rem;
+    } 
+    
+}

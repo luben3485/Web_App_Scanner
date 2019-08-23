@@ -1,0 +1,418 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  
+  "links": [],
+  "mobileUpgraded": true,
+  "panels": [
+    {
+      "FontSize": "70%",
+      "adjFontSize": true,
+      "aliasColors": {},
+      "bars": [],
+      "cacheTimeout": null,
+      "colors": [
+        "#7eb26d",
+        "#629e51",
+        "#508642"
+      ],
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "createUid": "1967f21e-7c21-eec5-7343-e95cbdd73972",
+      "customInterval": "",
+      "dataPoint": [
+        "Active_Scan_Progress-3444708",
+        "Passive_Scan_Progress-3444708"
+      ],
+      "datasource": "ZAP-Progress",
+      "decimals": null,
+      "description": "This panel shows the progress of your scan.",
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "interval": null,
+      "links": [],
+      "middleFont": 15,
+      "nullPointMode": "connected",
+      "panelThemeStyle": "50,50,51",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "continuous": true,
+          "dataType": "last",
+          "device": "select device",
+          "displayName": "@tagname",
+          "hide": false,
+          "project": "select project",
+          "refId": "A",
+          "scada": "select scada",
+          "scadaName": "select scada name",
+          "tag": "select tag",
+          "tagDesc": "tagDesc",
+          "target": "Passive_Scan_Progress-3444708",
+          "type": "timeserie"
+        },
+        {
+          "refId": "B",
+          "target": "Active_Scan_Progress-3444708",
+          "type": "timeserie"
+        }
+      ],
+      "title": "Scanning Progress",
+      "titleAdjFontSize": true,
+      "titleBgColor": "#052b51",
+      "titleFontSize": "1vw",
+      "titleFontSizeVal": "80%",
+      "titleShowSize": "",
+      "titleTxtAlign": "center",
+      "titleTxtBold": "normal",
+      "titleTxtColor": "rgb(255, 255, 255)",
+      "transparentRange": 1,
+      "type": "progress-bar-panel",
+      "valueName": "current"
+    },
+    {
+      "adjFontSize": true,
+      "adjFontSize_Option": false,
+      "aliasColors": {
+        "High": "#bf1b00",
+        "High-3444708": "#bf1b00",
+        "Informational": "rgb(187, 222, 176)",
+        "Informational-3444708": "#7eb26d",
+        "Low": "#7eb26d",
+        "Low-3444708": "#f2c96d",
+        "Medium-3444708": "#e0752d"
+      },
+      "cacheTimeout": null,
+      "combine": {
+        "label": "",
+        "threshold": ""
+      },
+      "createUid": "fc614468-138c-45d6-a583-0fa12eb65760",
+      "customInterval": null,
+      "datasource": "ZAP-Summary",
+      "decimals": null,
+      
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 4
+      },
+      "hideTimeOverride": false,
+      "id": 2,
+      "interval": null,
+      "legend": {
+        "header": "",
+        "percentage": false,
+        "show": true,
+        "sort": "current",
+        "sortDesc": true,
+        "values": false
+      },
+      "legendType": "Under graph",
+      "links": [],
+      "maxDataPoints": 1,
+      "middleFont": "100%",
+      "nullPointMode": "connected",
+      "panelThemeStyle": "50,50,51",
+      "pieType": "pie",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "High-3444708",
+          "type": "timeserie"
+        },
+        {
+          "refId": "B",
+          "target": "Medium-3444708",
+          "type": "timeserie"
+        },
+        {
+          "refId": "C",
+          "target": "Low-3444708",
+          "type": "timeserie"
+        },
+        {
+          "refId": "D",
+          "target": "Informational-3444708",
+          "type": "timeserie"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Summary of Alerts",
+      "titleAdjFontSize": true,
+      "titleBgColor": "#052b51",
+      "titleFontSize": "1vw",
+      "titleFontSizeVal": "80%",
+      "titleShowSize": "",
+      "titleTxtAlign": "center",
+      "titleTxtBold": "normal",
+      "titleTxtColor": "rgb(255, 255, 255)",
+      "transparent": false,
+      "transparentRange": 0.7,
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
+    },
+    {
+      "columns": [
+        {
+          "text": "Total",
+          "value": "total"
+        }
+      ],
+      "createUid": "fbe31b90-68ed-0aa2-0312-16a1375dfa50",
+      "customInterval": null,
+      "datasource": "ZAP-Summary",
+      "fontAdjustable": true,
+      "fontSize": "100%",
+      "fontSizePX": "15px",
+      "fontSizeStyle": {
+        "font-size": "1.4vw"
+      },
+      "fontSizeVW": "0.8vw",
+      "fontSizeVal": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 4
+      },
+      "id": 16,
+      "links": [],
+      "pageSize": null,
+      "panelThemeStyle": "50,50,51",
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": null,
+        "desc": false
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": null,
+          "pattern": "Time",
+          "type": "number"
+        },
+        {
+          "alias": "",
+          "colorMode": "row",
+          "colors": [
+            "rgb(38, 38, 38)",
+            "rgb(38, 38, 38)",
+            "rgb(38, 38, 38)"
+          ],
+          "decimals": 0,
+          "pattern": "/.*/",
+          "thresholds": [
+            "0",
+            "100"
+          ],
+          "type": "number",
+          "unit": "none"
+        }
+      ],
+      "targets": [
+        {
+          "refId": "A",
+          "target": "Informational-3444708",
+          "type": "timeserie"
+        },
+        {
+          "refId": "B",
+          "target": "medium",
+          "type": "timeserie"
+        },
+        {
+          "refId": "C",
+          "target": "low",
+          "type": "timeserie"
+        },
+        {
+          "refId": "D",
+          "target": "informational",
+          "type": "timeserie"
+        }
+      ],
+      "title": "Alerts",
+      "titleAdjFontSize": true,
+      "titleBgColor": "#052b51",
+      "titleFontSize": "1vw",
+      "titleFontSizeVal": "80%",
+      "titleShowSize": "",
+      "titleTxtAlign": "center",
+      "titleTxtBold": "normal",
+      "titleTxtColor": "rgb(255, 255, 255)",
+      "transform": "timeseries_aggregations",
+      "transparentRange": 1,
+      "type": "table"
+    },
+    {
+      "content": "<font color=white>\nThis is the dashboard of your security scan summary.</br>\nYou can view the scanning result here or download it as an HTML report.\n</font>",
+      "createUid": "4d56f0ec-192f-2036-e963-f2c37eb61198",
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 12,
+        "y": 11
+      },
+      "id": 4,
+      "links": [],
+      "mode": "html",
+      "panelThemeStyle": "50,50,51",
+      "title": "About",
+      "titleAdjFontSize": true,
+      "titleBgColor": "#052b51",
+      "titleFontSize": "1vw",
+      "titleFontSizeVal": "80%",
+      "titleShowSize": "",
+      "titleTxtAlign": "center",
+      "titleTxtBold": "normal",
+      "titleTxtColor": "rgb(255, 255, 255)",
+      "transparent": false,
+      "transparentRange": 1,
+      "type": "text"
+    },
+    {
+      "content": "\n        <html>\n            <head>\n                <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css\"/>\n            </head>\n            <body>\n            <button id=\"downloadReport\" class=\"ui  blue button\" style=\"font-size:1.3rem;\">\n                    <i class=\"file alternate outline icon\"></i>\n                    Download\n                </button>\n            \n                \n                <!--<script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>-->\n                <script>\n                    $(document).ready(function(){\n                        function getCookie(cname) {\n                            var name = cname + \"=\";\n                            var decodedCookie = decodeURIComponent(document.cookie);\n                            var ca = decodedCookie.split(';');\n                            for(var i = 0; i <ca.length; i++) {\n                                var c = ca[i];\n                                while (c.charAt(0) == ' ') {\n                                    c = c.substring(1);\n                                }\n                                if (c.indexOf(name) == 0) {\n                                    return c.substring(name.length, c.length);\n                                }\n                            }\n                            return \"\";\n                        }\n                        function getScanId(){\n                        var url = window.location.toString();\n                        var tmp1 =url.split(\"web-app-scanner-\")[1];\n                        var tmp2 = tmp1.split(\"?\")[0]\n                        return tmp2;\n                        \n                        }\n                        $('#downloadReport').click(function(){\n                            scanId = getScanId();\n                            appUrl = getCookie('appUrl');\n                            $.ajax({\n                                url: appUrl+'/downloadHtml',\n                                method: 'GET',\n                                data:{'scanId':scanId}\n                            }).done(function (res) {\n                                if(res=='fail'){\n                                    console.log('now u cannot download report');\n                                }else{\n                                    var a = document.createElement('a');\n                                    var url = window.URL.createObjectURL(new Blob([res], {type: \"application/html\"}));\n                                    a.href = url;\n                                    a.download = 'scan_report.html';\n                                    document.body.append(a);\n                                    a.click();\n                                    a.remove();\n                                    window.URL.revokeObjectURL(url);\n                                }\n                            }).fail(function () {\n                                console.log(\"/downloadHtml fail\") \n                            });\n                            \n                        });\n                        function getCookie(cname) {\n                            var name = cname + \"=\";\n                            var decodedCookie = decodeURIComponent(document.cookie);\n                            var ca = decodedCookie.split(';');\n                            for(var i = 0; i <ca.length; i++) {\n                                var c = ca[i];\n                                while (c.charAt(0) == ' ') {\n                                    c = c.substring(1);\n                                }\n                                if (c.indexOf(name) == 0) {\n                                    return c.substring(name.length, c.length);\n                                }\n                            }\n                            return \"\";\n                        }\n                        \n                        \n                    });\n                </script>\n            \n            </body>\n        </html>\n        ",
+      "createUid": "d76426f4-d8c2-30a1-0926-0690f19ffb52",
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 20,
+        "y": 11
+      },
+      "id": 10,
+      "links": [],
+      "mode": "html",
+      "panelThemeStyle": "50,50,51",
+      "title": "Download Report",
+      "titleAdjFontSize": true,
+      "titleBgColor": "#052b51",
+      "titleFontSize": "1vw",
+      "titleFontSizeVal": "80%",
+      "titleShow": false,
+      "titleShowSize": "",
+      "titleTxtAlign": "center",
+      "titleTxtBold": "normal",
+      "titleTxtColor": "rgb(255, 255, 255)",
+      "transparent": false,
+      "transparentRange": 1,
+      "type": "text"
+    },
+    {
+      "createUid": "bc7db4a9-2d95-2474-58bd-4fa264c44816",
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "header_js": "{}",
+      "id": 18,
+      "links": [],
+      "method": "iframe",
+      "mode": "html",
+      "panelThemeStyle": "50,50,51",
+      "params_js": "{\n from:ctrl.range.from.format('x'),  // x is unix ms timestamp\n to:ctrl.range.to.format('x'), \n height:ctrl.height,\n now: Math.floor( Date.now()/12000 ),\n interval: ctrl.template('$__interval'),\n sample: 'Not escaped: $__interval',\n since:ctrl.lastRequestTime\n}",
+      "request": "http",
+      "responseType": "text",
+      "showTime": false,
+      "showTimeFormat": "LTS",
+      "showTimePrefix": null,
+      "showTimeValue": "request",
+      "skipSameURL": true,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "select metric",
+          "type": "timeserie"
+        }
+      ],
+      "templateResponse": true,
+      "title": "Summary Report",
+      "titleAdjFontSize": true,
+      "titleBgColor": "#052b51",
+      "titleFontSize": "1vw",
+      "titleFontSizeVal": "80%",
+      "titleShowSize": "",
+      "titleTxtAlign": "center",
+      "titleTxtBold": "normal",
+      "titleTxtColor": "rgb(255, 255, 255)",
+      "transparentRange": 1,
+      "type": "ryantxu-ajax-panel",
+      "url": "https://zap-security-web-v4.arfa.wise-paas.com/datasource/report/3444708",
+      "withCredentials": false
+    }
+  ],
+  "refresh": "1s",
+  "schemaVersion": 16,
+  "style": "gray",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "1999-02-23T16:00:00.000Z",
+    "to": "now/d"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "1s",
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Web App Scanner",
+  "id": null,
+  "uid": null,
+  "version": 0
+}

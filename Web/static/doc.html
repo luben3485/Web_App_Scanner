@@ -1,0 +1,570 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>User Guide v2 (08/20)</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="22b6cd5d-e941-47b0-b4ae-23162abbd542" class="page sans"><header><h1 class="page-title">User Guide v2 (08/20)</h1></header><div class="page-body"><h1 id="f6489621-b376-4549-ac52-5f2fafcac685" class="">Table of content</h1><ul id="02308b16-4fab-4bcf-9cdc-ea607ebd87bb" class="bulleted-list"><li>Disclaimer</li></ul><ul id="cf49fc93-e77e-4654-a461-5495140a0d5b" class="bulleted-list"><li>Requirements</li></ul><ul id="c44de79a-7167-4897-81f9-d037fa434506" class="bulleted-list"><li>Introduction</li></ul><ul id="c42e82ed-2562-47fe-9c80-c1e9128173af" class="toggle"><li><details open=""><summary>Initial Setup</summary><ul id="8b692b0a-a942-47ec-bcb0-cc60bc79117e" class="bulleted-list"><li>Database Binding (Required)</li></ul><ul id="5e47be66-102a-498b-a68d-5e7233607d9e" class="bulleted-list"><li>Dashboard URL Setup (Required)</li></ul><ul id="6733b538-08a3-43cb-9c6e-0c00d514c984" class="bulleted-list"><li>Notification Setup (Optional)</li></ul></details></li></ul><ul id="cc897618-27f8-48ab-a47f-2033d27d7af3" class="toggle"><li><details open=""><summary>Scanning Portal</summary><ul id="5c7652d7-1233-4655-a86c-0178fd70b14a" class="bulleted-list"><li>Intro</li></ul><ul id="c30bb923-718d-4650-8c38-bef1165debaa" class="bulleted-list"><li>Passsive Scan<ul id="b255e047-05b7-4a25-9b53-9b1bf75ce100" class="bulleted-list"><li>SubtreeOnly</li></ul><ul id="4e09910e-3462-4a79-904d-ddfe829741b8" class="bulleted-list"><li>Recurse</li></ul></li></ul><ul id="5a978ced-b1e5-4b07-8d71-90c416d384fd" class="bulleted-list"><li>Full Scan<ul id="79cb5567-e95e-4c81-a085-482efc9ab383" class="bulleted-list"><li>Alert Threshold</li></ul><ul id="e72ab139-9a20-44ea-8195-07bf5895354a" class="bulleted-list"><li>Attack Stregth</li></ul><ul id="5e07f660-5a4d-42fa-a50c-93108a91fb5a" class="bulleted-list"><li>inScopeOnly</li></ul><ul id="83c1d2dd-fea9-4240-9ebb-bcf9efe27335" class="bulleted-list"><li>Recurse</li></ul></li></ul><ul id="daa4fa51-e1cf-44db-b648-bdb4e32773d8" class="bulleted-list"><li>Scheduled Scan</li></ul><ul id="de6a8c0b-b521-455f-9fda-8094445c20f3" class="bulleted-list"><li>Scan History</li></ul></details></li></ul><ul id="95737fbd-deda-4881-a9f4-0b05e08ea89a" class="toggle"><li><details open=""><summary>Dashboard</summary><ul id="4844a670-56ff-40a1-a930-8a1b722723a6" class="bulleted-list"><li>Intro</li></ul><ul id="c04aa7b9-57ce-46cd-9c05-e0f1f1425b53" class="bulleted-list"><li>Panels</li></ul></details></li></ul><ul id="04a667b9-cfa6-4f20-94df-150408c6740c" class="toggle"><li><details open=""><summary>Report</summary><ul id="4fd4921d-ab9b-4aeb-9e12-a99d7c034553" class="bulleted-list"><li>Intro</li></ul></details></li></ul><ul id="a2a77fbc-5c5f-46e7-a37d-9d067af530a4" class="bulleted-list"><li>Appendix</li></ul><h1 id="38beae66-8275-4b52-b8ed-808adf751a04" class="">Disclaimer</h1><p id="a0b6a067-ff9a-4c1e-88a6-c18382610946" class="">Please be aware that you should only perform security scans against the targets that you have been specifically given permission to test. It is the end user&#x27;s responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this web application.</p><h1 id="371cd601-b7db-4627-af95-6f11ca8d938f" class="">Requirements</h1><p id="d23c53df-a3cd-412f-8389-3239a9395f3e" class="">Before using our service, you should have subscribed the services listed below.</p><p id="18e948fc-2bfa-4ca7-bada-5159a4ef2e79" class="">WISE-PaaS Services:</p><ul id="81cf4e8d-9dd9-454b-bc9e-f62400414ecb" class="bulleted-list"><li>Dashboard</li></ul><ul id="5dcb7bbc-e1cd-45af-9f77-04297edb7a8d" class="bulleted-list"><li>MongoDB</li></ul><ul id="eb566ee9-6280-4fc2-b3ad-286a626397e1" class="bulleted-list"><li>Notitfication (Optional)</li></ul><h1 id="21070522-d7d1-4669-988e-d674f32ffa07" class="">Introduction</h1><p id="14bc4e55-dcfe-455f-a542-809e6ec17386" class="">EnSaaS Web App Scanner is a security tool that can perform advanced attacks against web applications in order to find security vulnerabilities. The scanner supports both passive scan and active scan. Passive scan spiders the target&#x27;s directories and files in order to find insecure issues and active scan performs more sophisticated attacks by sending malicious strings to the target in order to find more vulnerabilities. It also integrates with WISE-PaaS/Dashboard for real-time data visualization. User can view their scanning history on scanning portal at any time in order to keep track of the security issues regarding their owned web applications.</p><h1 id="b652047f-e8be-4d34-8c08-1521e747e2d2" class="">Initial Setup</h1><p id="93347554-40e8-4f20-b1a1-515ea9be62fa" class="">Once EnSaaS Web App Scanner is deployed in your space, there are some configurations need to be set at the very first time.<div class="indented"><h2 id="8ee565ba-3e5b-4626-9dc1-04c1d8d79ace" class="">Database Binding (Required)</h2><p id="89463e4f-6ca8-46f5-b0b0-c51eba821184" class="">First, you need to bind a mongo-db service to our Web-App-Scanner. This could be done by go to the &quot;Service Instance List&quot; → Click &quot;mongodb&quot; → &quot;Credentials&quot; → Create a key → &quot;Application Bind&quot; → Click our app →Enter your key.</p><h2 id="012a104d-04ea-445c-b9fb-c28124247757" class="">Dashboard URL Setup (Required)</h2><p id="56e2af4b-5726-4f01-a8b5-049c70ac1a2d" class="">The URL could be found on your WISE-PaaS Management Portal. Please make sure you&#x27;ve already subscribed and had WISE-PaaS/Dashboard in your space. You must have admin access (not a viewer) to your Dashboard before setup, otherwise, the configuration would fail.</p><figure id="2e8ee5c4-edc8-4453-86a9-6c32aba59800" class="image"><a href="User Guide v2 08 20/Screen_Shot_2019-08-08_at_15.26.17.png"><img style="width:480px" src="User Guide v2 08 20/Screen_Shot_2019-08-08_at_15.26.17.png"/></a></figure><p id="6dc09e4a-fd95-49ce-8c44-5c70ed55b33c" class="">Then, go to the Web App Scanner to setup your dashboard.</p><figure id="487fd32b-3c02-45f2-8bfa-66fdb9de4ef3" class="image"><a href="User Guide v2 08 20/option.png"><img style="width:480px" src="User Guide v2 08 20/option.png"/></a></figure><figure id="52b243b5-127f-441e-848d-5541d072f0a7" class="image"><a href="User Guide v2 08 20/dash_light.png"><img style="width:480px" src="User Guide v2 08 20/dash_light.png"/></a></figure><figure id="977e53c1-38ec-49f8-9cbc-3c06e4b63c5b" class="image"><a href="User Guide v2 08 20/set_dash_url.png"><img style="width:480px" src="User Guide v2 08 20/set_dash_url.png"/></a></figure><p id="0d28bbc7-87b1-48ac-bfc4-429419ebc98f" class="">
+</p><h2 id="bb452dfe-9e7e-4519-843e-42ceb02c7da5" class="">Notification Setup (Optional)</h2><p id="832d7c4a-b935-4ee0-98e9-098cb851e15a" class="">Our service integrates with WISE-PaaS/Notification, a summary report would automatically send to your mailbox whenever a security scan is done. If you want to have this feature, you should configure your email service setting also.</p><figure id="cc023a7f-cc47-46d8-acad-84df300b001d" class="image"><a href="User Guide v2 08 20/noti_light.png"><img style="width:384px" src="User Guide v2 08 20/noti_light.png"/></a></figure><p id="d770baf7-6054-432a-baf9-79883420cf4c" class="">
+</p><figure id="8b6cab15-14d8-4700-88cc-98bc170ff01d" class="image"><a href="User Guide v2 08 20/set_email.png"><img style="width:384px" src="User Guide v2 08 20/set_email.png"/></a></figure><p id="4f140990-dd1a-47c2-9ff0-f19c8cc77326" class="">
+</p></div></p><h1 id="f195390a-980b-4730-be49-1c77b1038174" class="">Scanning Portal</h1><figure id="d7850f3b-e4d3-476a-bcfd-3dff7463b2d7" class="image"><a href="User Guide v2 08 20/Portal.png"><img style="width:528px" src="User Guide v2 08 20/Portal.png"/></a></figure><h2 id="3c7ef2db-ce58-4ee9-a961-6174c2626bbe" class="">Intro</h2><p id="1b1497d3-93ad-4841-bdc4-45fc912db1a7" class="">You can manage your security scans in the scanning portal. Enter your target&#x27;s URL in the field and click &quot;Scan&quot; to start scanning. If others in your organization are using the scanner, the scanning portal would inform you and put your request in the scanning queue.</p><h2 id="37282829-e9f3-40a5-a624-f1951c18093f" class="">Passive Scan</h2><p id="e921ac7a-1889-48d8-9615-8d8803f264d6" class="">EnSaaS Web App Scanner performs a passive web security scan by spidering the targeted website, looking for directories, files, and HTTP methods, and then detecting issues like insecure HTTP headers, insecure cookie settings, and a few others.</p><ul id="a94a0f91-cc71-4c31-b2ae-5abaed4aaf65" class="toggle"><li><details open=""><summary>Advanced Options</summary><ul id="76125de7-8a94-40d3-9a18-9dd28a7ad7eb" class="bulleted-list"><li>SubtreeOnly : Enable to restrict the spider under the target url subtree.</li></ul><ul id="1fc3d39e-909e-4835-a1e1-7a8ede1c874a" class="bulleted-list"><li>Recurse : Enable to use the nodes underneath the one specified target to seed the spider.</li></ul></details></li></ul><h2 id="cbe60d61-5909-41c8-ad0a-44c269a7131e" class="">Full Scan</h2><p id="e4a64343-b279-42f6-8ecb-3c48bf82e460" class="">When a full scan is configured. EnSaaS Web App Scanner would perform an active scan right after finishing a passive scan, and it includes detection of SQL Injection, XSS, Local File Inclusion, Command Injection, for a more comprehensive security assessment.</p><ul id="85cffb4a-4f3b-4fb3-bd04-f38bc198fefe" class="toggle"><li><details open=""><summary>Advanced Options</summary><ul id="9597454c-01b7-4572-a3ea-723f4288cdb8" class="bulleted-list"><li>Alert Threshold : Set the Alert Threshold (Default is Medium)</li></ul><ul id="90a94555-ab62-4855-aabc-6cd8793fa23b" class="bulleted-list"><li>Attack Stregth : Set the Attack Stregth (Default is Medium)</li></ul><ul id="8ba9f4c7-d516-447e-8121-710e7f534258" class="bulleted-list"><li>inScopeOnly : Set In Scope only to true to constrain the scan to URLs that are in scope.</li></ul><ul id="36dbe212-31ca-4788-9e1d-42f0f7681d73" class="bulleted-list"><li>Recurse : Set recurse option to scan URLs under the given target URL.</li></ul></details></li></ul><h2 id="6771f74a-9c07-477f-b214-479448ae35ea" class="">Scheduled Scan</h2><p id="ba84daba-e8ea-4525-95d6-2ff582fad8ce" class="">You can schedule your scan against certain website at a specific time, and also choose whether to repeat the scan periodically. If others in your organization is currently using the scanner, your security scan would also be put in the scanning queue.</p><h2 id="2b71087e-d270-4256-90c1-135d5cd667e8" class="">Scan History</h2><p id="a3c3646d-b84b-4674-9d86-8b0717268d68" class="">You can view your scan history below the scanning portal, and click the link of a dashboard to review your scanning summary. And if your scanning requests are still in the process, you can also check the status of your requests here.</p><h1 id="53d61861-fa86-428f-ab00-d772fc63368a" class="">Dashboard</h1><figure id="2e782273-a5a7-4445-943d-219f80efba6c" class="image"><a href="User Guide v2 08 20/new_dash.png"><img style="width:1248px" src="User Guide v2 08 20/new_dash.png"/></a></figure><h2 id="232bb32d-7d9d-4930-923f-e69c77e5f479" class="">Intro</h2><p id="2d4c6e1a-5be5-425c-a0ce-617be2fcee84" class="">WISE-PaaS/Dashboard is a service that gives you a clean interface to keep track of all the information in one place. We integrate EnSaaS Web App Scanner with Dashboard to give you the best security assessment with real-time visualization. </p><h2 id="700f88ee-f0cb-4ab5-810a-d0984d3a0698" class="">Panels</h2><p id="089d4968-3d08-4395-9f83-e7b0ab75cb0a" class="">Scanning progress panel shows the current progress of your scan. If you chose &quot;Passive Only&quot; in your scan option, the &quot;Active Scan&quot; progress would consistently be 0 by default.</p><p id="9f26b145-7eba-4647-9dca-5d00864c2713" class="">Pie chart and table panel shows the count of High, Medium, Low and Informational issue that has already discovered in your system. They keep dynamically updating until your scan is finished.</p><p id="9a858743-fb60-462c-a2b4-ee3996086c1f" class="">You can download the scanning report once the scan is finished. The same file can also be found in the &quot;Scan History&quot; on your Scanning Portal.</p><p id="286bae81-e72f-4fe3-b5a7-f448aea256fd" class="">Summary Report panel dynamically shows the newest security issues found with explanations in details. The context presented would be the same as the report provided in the download button. However, we highly suggest you download the scanning report in order to do further security maintaining to your system. </p><p id="fbecc4d0-8d00-4c23-a934-ac7250a8c354" class="">
+</p><h1 id="b3e1a3c2-5bad-460f-b646-04b1d7046b64" class="">Report</h1><figure id="00a4a05c-7851-498a-966a-4aebc110a0ee" class="image"><a href="User Guide v2 08 20/new_report.png"><img style="width:576px" src="User Guide v2 08 20/new_report.png"/></a></figure><h2 id="367cca3c-98a4-4023-9e98-87a3c8c90c27" class="">Intro</h2><p id="ef1c326b-7efe-4ad5-8ff2-886c53a3174b" class="">The first table of the report shows the summary of alerts, followed by alert details below. The alert details show descriptions of certain vulnerabilities with URL, Method, and Parameter. Moreover, the suggested solution and security references are also provided.</p><h1 id="13e8191e-fc81-4e55-ad4a-86ccc5cf26c2" class="">Appendix</h1><p id="ea0630d9-6c9e-4592-9c5d-2a24879cfb95" class="">EnSaaS Web App Scanner focuses on the security assessment on web apps. We suggest that you can use our product with multiple security tools in order to have a comprehensive view of your entire system. A couple of resources for your references are listed below.<div class="indented"><h3 id="cf0dff02-c859-4c6d-aabf-428cde2921ef" class="">CWE ID Lookup</h3><p id="901c5dcd-842e-4bcd-9447-0b6b3bf0e340" class=""><a href="https://cwe.mitre.org/">https://cwe.mitre.org</a></p><h3 id="141649d5-85d2-49cc-9e5a-8d26e05fa4de" class="">[Tools] Port Scanning</h3><p id="95ffff35-a86b-4302-bc4c-db15fdae9ec2" class="">Nmap (<a href="https://nmap.org/">https://nmap.org</a>)</p><h3 id="b94d31df-73c2-4405-9767-9c9140a3d2ed" class="">[Tools] SQL injection</h3><p id="c7c09bec-875c-49ac-bbc8-7d4b0bb6f47f" class="">SQLMap (<a href="http://sqlmap.org/">http://sqlmap.org</a>)</p><h3 id="221b8180-0f1b-419f-bb4f-ac531ff13850" class="">[Tools] XSS </h3><p id="2f43e19d-398f-4ece-8a57-3c14317af885" class="">XssPy (<a href="https://github.com/faizann24/XssPy">https://github.com/faizann24/XssPy</a>): A python based XSS vulnerability scanner that is used by many organization including Microsoft, Stanford, Motorola, Informatica, etc.</p><h3 id="09d8fb41-9a24-4719-b99b-4188b154fc53" class="">[Tools] System Vulnerbility Scanning</h3><p id="ff7e6bf7-4bf1-4c30-a1aa-c839abc79f68" class="">OpenVAS (<a href="http://www.openvas.org/">http://www.openvas.org</a>)</p></div></p><p id="214ada5b-ae45-4a04-b610-82a0695385ba" class="">
+</p></div></article></body></html>
