@@ -278,29 +278,26 @@ $(document).ready(function(){
     }
     autoRefreshTableTimer = setInterval(function(){ autoRefreshTable() }, 10000);
     function autoRefreshTable(){
-        /*
-        console.log($('input[name="date"]').val());
-        time = 'August 5, 2019 5:22 PM'
-        var date = new Date(time);
-        console.log(date)
-        console.log(Math.floor(date.getTime()/1000));
-        console.log(isValidDate(date));
-        */
-        refreshTable().done(function(response){
-            console.log(response.length)
-            while (Data.length > 0) Data.pop();
-            while (response.length > 0) Data.push(response.shift());
-            //console.log("refresh table successfully");
-        }).fail(function(){
-            //console.log('refreshTable error')
-        });
-        
-        refreshScheduleTable().done(function(response){
-            while (schedule.length > 0) schedule.pop();
-            while (response.length > 0) schedule.push(response.shift());
-            //console.log("refresh  schedule table successfully");
-        }).fail(function(){
-            //console.log("refresh schedule table fail") 
+        EIToken_verification().done(function(){
+            
+            refreshTable().done(function(response){
+                console.log(response.length)
+                while (Data.length > 0) Data.pop();
+                while (response.length > 0) Data.push(response.shift());
+                //console.log("refresh table successfully");
+            }).fail(function(){
+                //console.log('refreshTable error')
+            });
+
+            refreshScheduleTable().done(function(response){
+                while (schedule.length > 0) schedule.pop();
+                while (response.length > 0) schedule.push(response.shift());
+                //console.log("refresh  schedule table successfully");
+            }).fail(function(){
+                //console.log("refresh schedule table fail") 
+            });
+         }).fail(function(){
+            window.location.href = ssoUrl + '/web/signIn.html?redirectUri=' + myUrl;
         });
     }
     
