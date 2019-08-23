@@ -281,7 +281,7 @@ $(document).ready(function(){
         EIToken_verification().done(function(){
             
             refreshTable().done(function(response){
-                console.log(response.length)
+                //console.log(response.length)
                 while (Data.length > 0) Data.pop();
                 while (response.length > 0) Data.push(response.shift());
                 //console.log("refresh table successfully");
