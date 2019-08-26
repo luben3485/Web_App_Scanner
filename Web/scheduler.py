@@ -1,9 +1,18 @@
 #-*-coding:utf-8 -*- 
+import os 
+import json
 import time
 import mongodb
 import requests
 import copy
 import random
+
+from notify import create_group,delete_group,send_email,get_token,send_mail_by_scanID
+
+try:
+    ssoUrl = 'https://portal-sso' + app_env['application_uris'][0][app_env['application_uris'][0].find('.'):]
+except Exception as err:
+    print('error: {}'.format(str(err)))
 
 def checkPassiveStatus(scanId):
     try:
@@ -25,6 +34,7 @@ def checkPassiveStatus(scanId):
             #scan finish
             if status == '100':
                 db.modifyExistInfo('status','3',scanId)
+                send_mail_by_scanID(ssoUrl,scanId)
                 break
             time.sleep(1)
     except Exception as err:
@@ -105,6 +115,7 @@ def checkActiveStatus(scanId,targetURL,arecurse,inScopeOnly,method,postData,cont
             #scan finish
             if status == '100':
                 db.modifyExistInfo('status','3',scanId)
+                send_mail_by_scanID(ssoUrl,scanId)
                 break
             time.sleep(1)
 
