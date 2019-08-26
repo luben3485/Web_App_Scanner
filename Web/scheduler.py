@@ -10,6 +10,7 @@ import random
 from notify import create_group,delete_group,send_email,get_token,send_mail_by_scanID
 
 try:
+    app_env = json.loads(os.environ['VCAP_APPLICATION'])
     ssoUrl = 'https://portal-sso' + app_env['application_uris'][0][app_env['application_uris'][0].find('.'):]
 except Exception as err:
     print('error: {}'.format(str(err)))
